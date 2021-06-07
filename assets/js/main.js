@@ -15,18 +15,8 @@ const app = new Vue ({
         url: "https://flynn.boolean.careers/exercises/api/array/music",
         albums: [],
         genres: [],
-        genre: "",
         selected: "Choose a genre...",
         
-    },
-
-    methods: {
-
-    },
-
-    computed: {
-        
-
     },
 
     mounted() {
@@ -38,8 +28,11 @@ const app = new Vue ({
             this.albums = albums;
 
             this.albums.forEach(album  => {
-                this.genres.push(album.genre);
-                console.log(this.genres); 
+
+                if (!this.genres.includes(album.genre)) {
+                    this.genres.push(album.genre);
+                }
+                
             });
 
 
