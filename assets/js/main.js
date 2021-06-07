@@ -19,6 +19,8 @@ const app = new Vue ({
 
     methods: {
 
+        
+
     },
 
     mounted() {

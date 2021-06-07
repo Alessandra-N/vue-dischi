@@ -34,10 +34,8 @@
 
             <main class="d-flex flex-wrap">
 
-                
-
-                <div class="card bg_head" v-for="album in albums" v-if="selected === 'Choose a genre...'">
-
+                <div id="card" class="card bg_head" v-for="album in albums" v-if="selected === album.genre || selected === 'Choose a genre...'">
+                    
                     <img :src="album.poster" alt="">
                     <div class="title text-uppercase">
                         {{album.title}}
@@ -50,22 +48,6 @@
                     </div> 
 
                 </div>
-
-                <div class="card bg_head" v-for="album in albums" v-if="selected === album.genre">
-
-                    <img :src="album.poster" alt="">
-                    <div class="title text-uppercase">
-                        {{album.title}}
-                    </div>
-                    <div class="artist">
-                        {{album.author}}
-                    </div>
-                    <div class="year">
-                        {{album.year}}
-                    </div> 
-
-                </div>
-                
 
             </main>
 
