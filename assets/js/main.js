@@ -14,11 +14,17 @@ const app = new Vue ({
     data: {
         url: "https://flynn.boolean.careers/exercises/api/array/music",
         albums: [],
+        genres: [],
+        genre: "",
         selected: "Choose a genre...",
+        
     },
 
     methods: {
 
+    },
+
+    computed: {
         
 
     },
@@ -30,11 +36,19 @@ const app = new Vue ({
         .then(response => {
             const albums = response.data.response;
             this.albums = albums;
+
+            this.albums.forEach(album  => {
+                this.genres.push(album.genre);
+                console.log(this.genres); 
+            });
+
+
         })
         .catch(e => {
             console.error(e);
         })
-
+        
+      
     },
 
 })

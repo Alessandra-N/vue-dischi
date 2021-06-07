@@ -23,18 +23,29 @@
                 <i class="fab fa-spotify mx-4"></i>
 
                 <select v-model="selected">
+
+                    <option>Choose a genre...</option>
+
+                    <option v-for="genre in genres">
+                        {{genre}}
+                    </option>
+
+
+                </select>
+
+                <!-- <select v-model="selected" v-for="album in albums">
                     <option>Choose a genre...</option>
                     <option>Jazz</option>
                     <option>Metal</option>
                     <option>Pop</option>
                     <option>Rock</option>
-                </select>
+                </select> -->
 
             </header>
 
             <main class="d-flex flex-wrap">
 
-                <div id="card" class="card bg_head" v-for="album in albums" v-if="selected === album.genre || selected === 'Choose a genre...'">
+                <div class="card bg_head" v-for="album in albums" v-if="selected === album.genre || selected === 'Choose a genre...'">
                     
                     <img :src="album.poster" alt="">
                     <div class="title text-uppercase">
