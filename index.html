@@ -25,6 +25,7 @@
                 <select v-model="selected">
 
                     <option>Choose a genre...</option>
+                    <button>Cerca</button>
 
                     <option v-for="genre in genres">
                         {{genre}}
@@ -34,11 +35,12 @@
 
             </header>
 
-            <main class="d-flex flex-wrap">
+            <main class="d-flex flex-wrap justify-content-center">
 
-                <div class="card bg_head" v-for="album in albums" v-if="selected === album.genre || selected === 'Choose a genre...'">
+                <div class="card bg_head d-flex flex-column align-items-center" v-for="album in albums" v-if="selected === album.genre || selected === 'Choose a genre...'">
                     
                     <img :src="album.poster" alt="">
+                    
                     <div class="title text-uppercase">
                         {{album.title}}
                     </div>
